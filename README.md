@@ -4,6 +4,7 @@
 
 ## ➡️ Overview
 hhhhhhhhhh
+version
 The bootcamp's main purpose is to _bridge the gap_ between curious and solution-oriented _individuals_ and _companies_ in need of capable data people. We provide the most fundamental knowledge to the students so that they understand what AI is all about. We therefore eliminate unnecessary formalization as much as possible, so that the students advance fast in their quest and become practitioners real quick.
 
 ![Timeline](timeline.png)
