@@ -1,18 +1,118 @@
 # Hosting services: the basics
 
-1. [What's a Web App?](#Introduction)
-2. [Render](#Render)
-3. [Other solutions](#others)
+1. [What's a Web App?](#introduction)
+2. [Render](#render)
+3. [Streamlit](#streamlit)
+4. [Cloud Services](#big-cloud-providers)
 
 ## Introduction
 
+When your code is running and you would like people to be able to use it, they are many ways to do it. You can package it as a standalone application or you can deploy it as a web application.
 When it comes to deploying your API (also called, web-server), a lot of solutions exists.
 
 Each with the set of services, facilities and prices.
 
+
+## Render
+
+Render is a cloud platform that simplifies the deployment of web applications, APIs, databases, and static sites. It provides an all-in-one solution for developers to deploy, manage, and scale their applications with minimal configuration and effort. Render offers various services, including web services, static sites, background workers, cron jobs, and managed databases.
+
+**Why is it intersting ?**
+
+- Easy Deployment: Deploy web applications and static sites directly from your Git repositories with automatic builds and deploys on every push.
+- Scalability: Automatically scale your applications based on traffic and resource usage.
+- Managed Databases: Easily set up and manage PostgreSQL databases with automatic backups and scaling.
+- Custom Domains: Securely manage custom domains with free TLS certificates.
+- Monitoring and Logging: Integrated monitoring and logging tools to keep track of your application's performance and troubleshoot issues.
+
+**How to start ?**
+
+1. Signing Up
+
+To use Render, you need to sign up for a free account on their [website](https://render.com/)
+Connect your GitHub or GitLab repository to Render.
+
+2. Create Service
+
+After logging in, click on the "New" button and select "Web Service".
+Connect your github repository and select the branch you want to deploy from.
+Configure Your Service:
+
+Name your service and choose the runtime (e.g., Node, Python, Go).
+**Set the build and start commands**. For a Python app using flask api (cfr [previous chapter](../FastAPI/01-fastapi-introduction.md)), this might look like:
+
+```bash
+Build Command: pip install -r requirements.txt
+Start Command: gunicorn app:app
+```
+3. Deploy
+
+Click "Create Web Service". Render will start the deployment process, building your application and making it live.
+
+**Going further** 
+
+Check out the [documentation](https://docs.render.com/deploy-fastapi) for a better understanding
+
+Try to deploy your hangman project as a render application.
+
+
+## Streamlit
+![Streamlit loading](assets/streamlit.gif)
+
+[Streamlit](https://streamlit.io/) is an open-source Python library designed to simplify the process of creating web applications for data science and machine learning projects. It allows data scientists and machine learning engineers to create interactive and visually appealing web applications directly from Python scripts, without requiring any knowledge of web development technologies like HTML, CSS, or JavaScript.
+
+**Why is it interesting ?**
+
+- Easy to Use: Streamlit’s API is intuitive and easy to learn, making it accessible even for those with minimal programming experience.
+- Interactive Widgets: Add interactive widgets like sliders, dropdowns, and buttons to your app with simple commands.
+- Live Updating: Streamlit automatically updates the app in real-time as you modify your script.
+- Integration: Seamlessly integrates with popular data science libraries like Pandas, NumPy, Matplotlib, and Plotly.
+
+**How to start ?**
+
+`pip install streamlit` 
+
+```python
+import streamlit as st
+import pandas as pd
+import numpy as np
+
+st.title('Simple Streamlit App')
+
+st.write("Here's our first attempt at using Streamlit to create a table:")
+st.write(pd.DataFrame({
+    'first column': [1, 2, 3, 4],
+    'second column': [10, 20, 30, 40]
+}))
+
+if st.checkbox('Show dataframe'):
+    chart_data = pd.DataFrame(
+       np.random.randn(20, 3),
+       columns=['a', 'b', 'c'])
+
+    st.line_chart(chart_data)
+
+```
+
+![Simple app](assets/app.png)
+
+Checkout the available documentation and tutorials : 
+
+- [streamlit documentation ](https://docs.streamlit.io/)
+- [Streamlit tutorial](https://docs.streamlit.io/develop/tutorials)
+- [Streamlit tutorial geeksforgeek](https://www.geeksforgeeks.org/a-beginners-guide-to-streamlit/)
+
+
+**How to practice ?**
+
+To practice the app deployement with streamlit, you can : 
+- deploy your hangman project
+- deploy you vizualisation from the immo eliza project
+
+
 ## Big cloud providers
 
-A first possibility, and what will mostly be used in big companies is cloud providers. The 3 mains ones are:
+Another possibility to deploy an application, and what will mostly be used in big companies is cloud providers. The 3 mains ones are:
 - Amazon Web Services (AWS)
 - Microsoft Azure (AZ)
 - Google Cloud Platform (GCP) 
@@ -25,7 +125,7 @@ But this kind of service is expensive and not easy to manage. You have to update
 
 To make the process of deploying all the "common" services (API, web app, website,...) they have specific services that you can use with less configuration more ease.
 
-In this course, we won't use cloud providers that much because a lot of free alternative exists, but for bigger projects it's good to be aware of what is out there.
+In this course, we don't use cloud providers that much because a lot of free alternative exists, but for bigger projects it's good to be aware of what is out there.
 
 **For APIs, here are some interesting solutions:**
 
@@ -60,6 +160,4 @@ Microsoft Azure is one of the most used Wep Application Service, like Amazon's A
 
 **Please be careful because the pricing can escalate pretty quickly.**
 
-## Render
-
-If you want to easily deploy an API for free, [Render](https://render.com/) is what you are looking for...
+This section is mainly for your information, you don't need to practice deploying applications on cloud services.
