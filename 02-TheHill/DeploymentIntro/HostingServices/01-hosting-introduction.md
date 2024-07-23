@@ -27,46 +27,7 @@ Render is a cloud platform that simplifies the deployment of web applications, A
 
 **How to start ?**
 
-1. Signing Up
-
-To use Render, you need to sign up for a free account on their [website](https://render.com/)
-Connect your GitHub or GitLab repository to Render.
-
-2. Create Service
-
-After logging in, click on the "New" button and select "Web Service".
-
-
-![](assets/render_new_web_app.png)
-
-![](assets/render_create.jpg)
-
-Connect your github repository and select the branch you want to deploy from.
-Configure Your Service:
-
-![](assets/render_connect_repo.jpg)
-
-Name your service and choose the runtime (e.g., Node, Python, Go).
-**Set the build and start commands**. For a Python app using flask api (cfr [previous chapter](../FastAPI/01-fastapi-introduction.md)), this might look like:
-
-
-
-```bash
-Build Command: pip install -r requirements.txt
-Start Command: gunicorn app:app
-```
-3. Deploy
-
-Click "Create Web Service". Render will start the deployment process, building your application and making it live.
-
-![done](assets/render_done.jpg)
-
-**Going further** 
-
-Check out the [documentation](https://docs.render.com/deploy-fastapi) for a better understanding
-
-Try to deploy your hangman project as a render application.
-
+Go checkout the [next file](02-hosting-render.md)
 
 ## Streamlit
 ![Streamlit loading](assets/streamlit.gif)
