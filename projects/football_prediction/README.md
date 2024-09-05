@@ -103,10 +103,12 @@ This dataset will help out the Data Engineers in figuring out what the Data Anal
 ### Steps
 
 1. **Set up repository** and study the project requirements.
-2. **Backbone**: Build a web scraper and set up the database.
-3. **Model Training**: Train your prediction model using historical data.
-4. **Streamlit Dashboard**: Build and deploy the dashboard.
-5. **Airflow**: Automate scraping and model updates using Airflow.
+2. **Split the work**:
+   - Build a web scraper. - DE
+   - Set up the database. - DE
+   - Train your prediction model using historical data. - DA
+   - Build and deploy the dashboard. - DA
+   - Automate scraping and model updates using Airflow. - DE
 
 ## A final note of encouragement
 
