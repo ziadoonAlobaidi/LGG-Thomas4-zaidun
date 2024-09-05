@@ -72,6 +72,7 @@ This dataset will help out the Data Engineers in figuring out what the Data Anal
 - **Hosting database**: 
   - [Heroku Postgres](https://www.heroku.com/postgres)
   - [ElephantSQL](https://www.elephantsql.com/)
+  - [SummaryOfOptions](https://gist.github.com/bmaupin/0ce79806467804fdbbf8761970511b8c) (thank you Loic <3)
 
 - **Bookmaker odds**: Scrape odds from the following sources:
   - [WhoScored](https://www.whoscored.com/)
